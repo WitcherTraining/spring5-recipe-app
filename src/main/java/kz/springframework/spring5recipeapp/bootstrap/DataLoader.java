@@ -122,14 +122,14 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         Note guacNote = new Note();
         guacNote.setRecipeNote("Be careful handling chiles if using. Wash your hands thoroughly after handling and " +
                 "do not touch your eyes or the area near your eyes with your hands for several hours.");
-        guacNote.setRecipe(guacRecipe);
+//        guacNote.setRecipe(guacRecipe);
         guacRecipe.setNote(guacNote);
 
-        guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), guacRecipe, eachUom));
-        guacRecipe.getIngredients().add(new Ingredient("salt", new BigDecimal(".25"), guacRecipe, teaspoonUom));
-        guacRecipe.getIngredients().add(new Ingredient("fresh lime juice", new BigDecimal(1), guacRecipe, tableSpoonUom));
-        guacRecipe.getIngredients().add(new Ingredient("freshly grated black pepper", new BigDecimal(1), guacRecipe, dashUom));
-        guacRecipe.getIngredients().add(new Ingredient("cilantro", new BigDecimal(1), guacRecipe, tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), eachUom));
+        guacRecipe.addIngredient(new Ingredient("salt", new BigDecimal(".25"), teaspoonUom));
+        guacRecipe.addIngredient(new Ingredient("fresh lime juice", new BigDecimal(1), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("freshly grated black pepper", new BigDecimal(1), dashUom));
+        guacRecipe.addIngredient(new Ingredient("cilantro", new BigDecimal(1), tableSpoonUom));
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
@@ -155,19 +155,19 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         tacoNote.setRecipeNote("Look for ancho chile powder with the Mexican ingredients at your grocery store, " +
                 "on buy it online. (If you can't find ancho chili powder, you replace the ancho chili, the oregano, " +
                 "and the cumin with 2 1/2 tablespoons regular chili powder, though the flavor won't be quite the same.)");
-        tacoNote.setRecipe(tacoRecipe);
+//        tacoNote.setRecipe(tacoRecipe);
         tacoRecipe.setNote(tacoNote);
 
-        tacoRecipe.getIngredients().add(new Ingredient("ancho chili powder", new BigDecimal(2), tacoRecipe, tableSpoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("dried oregano", new BigDecimal(1), tacoRecipe, teaspoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("dried cumin", new BigDecimal(1), tacoRecipe, teaspoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("sugar", new BigDecimal(1), tacoRecipe, teaspoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("salt", new BigDecimal(".5"), tacoRecipe, teaspoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("garlic", new BigDecimal(1), tacoRecipe, eachUom));
-        tacoRecipe.getIngredients().add(new Ingredient("orange zest", new BigDecimal(1), tacoRecipe, tableSpoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("fresh-squeezed orange juice", new BigDecimal(3), tacoRecipe, tableSpoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("olive oil", new BigDecimal(2), tacoRecipe, tableSpoonUom));
-        tacoRecipe.getIngredients().add(new Ingredient("chicken thighs", new BigDecimal(4), tacoRecipe, eachUom));
+        tacoRecipe.addIngredient(new Ingredient("ancho chili powder", new BigDecimal(2), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("dried oregano", new BigDecimal(1), teaspoonUom));
+        tacoRecipe.addIngredient(new Ingredient("dried cumin", new BigDecimal(1), teaspoonUom));
+        tacoRecipe.addIngredient(new Ingredient("sugar", new BigDecimal(1), teaspoonUom));
+        tacoRecipe.addIngredient(new Ingredient("salt", new BigDecimal(".5"), teaspoonUom));
+        tacoRecipe.addIngredient(new Ingredient("garlic", new BigDecimal(1), eachUom));
+        tacoRecipe.addIngredient(new Ingredient("orange zest", new BigDecimal(1), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("fresh-squeezed orange juice", new BigDecimal(3), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("olive oil", new BigDecimal(2), tableSpoonUom));
+        tacoRecipe.addIngredient(new Ingredient("chicken thighs", new BigDecimal(4), eachUom));
 
         tacoRecipe.getCategories().add(americanCategory);
         tacoRecipe.getCategories().add(mexicanCategory);

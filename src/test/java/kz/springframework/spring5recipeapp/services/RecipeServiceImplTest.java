@@ -1,14 +1,13 @@
 package kz.springframework.spring5recipeapp.services;
 
+import kz.springframework.spring5recipeapp.converters.RecipeCommandToRecipe;
+import kz.springframework.spring5recipeapp.converters.RecipeToRecipeCommand;
 import kz.springframework.spring5recipeapp.domain.Recipe;
 import kz.springframework.spring5recipeapp.repositories.RecipeRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -20,6 +19,8 @@ import static org.mockito.Mockito.*;
 public class RecipeServiceImplTest {
 
     RecipeServiceImpl recipeService;
+    RecipeCommandToRecipe recipeCommandToRecipe;
+    RecipeToRecipeCommand recipeToRecipeCommand;
 
     @Mock
     RecipeRepository recipeRepository;
@@ -28,7 +29,7 @@ public class RecipeServiceImplTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
@@ -61,5 +62,20 @@ public class RecipeServiceImplTest {
         assertEquals(recipes.size(), 0);
 
         verify(recipeRepository, times(1)).findAll();
+    }
+
+    @Test
+    public void testDeleteById() throws Exception {
+
+        //given
+        Long idToDelete = Long.valueOf(2L);
+
+        //when
+        recipeService.deleteById(idToDelete);
+
+        //no 'when', since method has void return type
+
+        //then
+        verify(recipeRepository, times(1)).deleteById(anyLong());
     }
 }

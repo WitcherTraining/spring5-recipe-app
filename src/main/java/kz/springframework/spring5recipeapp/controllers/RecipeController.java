@@ -1,7 +1,6 @@
 package kz.springframework.spring5recipeapp.controllers;
 
 import kz.springframework.spring5recipeapp.commands.RecipeCommand;
-import kz.springframework.spring5recipeapp.exceptions.BadRequestException;
 import kz.springframework.spring5recipeapp.exceptions.NotFoundException;
 import kz.springframework.spring5recipeapp.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
@@ -74,18 +73,4 @@ public class RecipeController {
         return modelAndView;
     }
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(NumberFormatException.class)
-    public ModelAndView handleNumberFormat(Exception exception){
-
-        log.error("Handling Number format exception");
-        log.error(exception.getMessage());
-
-        ModelAndView modelAndView = new ModelAndView();
-
-        modelAndView.setViewName("400error");
-        modelAndView.addObject("exception", exception);
-
-        return modelAndView;
-    }
 }

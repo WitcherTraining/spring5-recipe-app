@@ -63,6 +63,12 @@
             <version>3.0.0-M5</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.1.6.Final</version>
+        </dependency>
+
     </dependencies>
 
     <build>

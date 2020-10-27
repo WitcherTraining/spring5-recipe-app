@@ -43,7 +43,6 @@ public class RecipeServiceImpl implements RecipeService {
 
         if (!recipeOptional.isPresent()){
             throw  new NotFoundException("Recipe not found. For ID value " + l.toString());
-
         }
 
         return recipeOptional.get();

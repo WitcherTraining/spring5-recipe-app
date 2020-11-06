@@ -4,8 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -23,19 +21,19 @@ public class Ingredient {
     private Recipe recipe;
 
     @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure unitOfMeasure;
+    private UnitOfMeasure uom;
 
-    public Ingredient(String description, BigDecimal amount, Recipe recipe, UnitOfMeasure unitOfMeasure) {
+    public Ingredient(String description, BigDecimal amount, Recipe recipe, UnitOfMeasure uom) {
         this.description = description;
         this.amount = amount;
         this.recipe = recipe;
-        this.unitOfMeasure = unitOfMeasure;
+        this.uom = uom;
     }
 
-    public Ingredient(String description, BigDecimal amount, UnitOfMeasure unitOfMeasure) {
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
         this.description = description;
         this.amount = amount;
-        this.unitOfMeasure = unitOfMeasure;
+        this.uom = uom;
     }
 
     public Ingredient() {

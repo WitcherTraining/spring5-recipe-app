@@ -3,6 +3,7 @@ spring:
     url: jdbc:mysql://localhost:3306/recipe_prod
     username: witcher_dev_user
     password: aBCrN9DxP4BjYkUcrpYn
+    platform: mysql
   jpa:
     hibernate:
       ddl-auto: validate

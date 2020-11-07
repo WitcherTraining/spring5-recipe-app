@@ -120,7 +120,7 @@
                                     <!--/*@thymesVar id="ingredient" type="kz.springframework.spring5recipeapp.domain.Ingredient"*/-->
                                     <li th:each="ingredient : ${recipe.ingredients}"
                                         th:text="${(ingredient.getAmount() + ' ' +
-                                        ingredient.unitOfMeasure.getDescription() + ' ' +
+                                        ingredient.uom.getDescription() + ' ' +
                                         ingredient.getDescription())}">1 Teaspoon of Sugar
                                     </li>
                                 </ul>
